@@ -19,6 +19,7 @@
     "axios": "^1.5.1",
     "date-fns": "^2.30.0",
     "dayjs": "^1.11.10",
+    "http-proxy-middleware": "^2.0.6",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
