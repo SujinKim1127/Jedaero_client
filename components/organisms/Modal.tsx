@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import { Button, Checkbox, TextField, keyframes } from "@mui/material";
 import { useRecoilState, useSetRecoilState } from "recoil";
-import { modalState } from "../atoms/modalState";
+import modalState from "../atoms/modalState";
 import { useModal } from "../hooks/useModal";
 import Logo from "@/components/atoms/Logo.svg";
 import ModalCloseButton from "@/components/atoms/ModalCloseBtn.svg";
@@ -18,8 +18,8 @@ const LoginModal: React.FC<ModalProps> = () => {
 
   const { closeModal } = useModal();
 
-  const [email, setEmail] = useState<string>();
-  const [password, setPassword] = useState<string>();
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   const setLoginedUserState = useSetRecoilState(initialState);
 
   const handleLogin = async (email: string, password: string) => {
