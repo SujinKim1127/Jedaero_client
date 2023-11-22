@@ -1,5 +1,5 @@
 import { ReactNode, useState } from "react";
-import * as styles from "./SecondBox.styles";
+import * as styles from "../../components/styles/SecondBox.styles";
 import { Pie, PieChart, ResponsiveContainer, Sector, Tooltip } from "recharts";
 interface SecondBoxProps {
   children?: ReactNode;
