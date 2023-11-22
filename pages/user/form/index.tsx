@@ -2,16 +2,14 @@ import React, { useEffect, useState } from "react";
 import * as phase from "@/components/styles/user/first/style";
 import * as styles from "@/components/styles/user/second/style";
 
-import {
-  Checkbox,
-  FilledInput,
-  InputAdornment,
-  OutlinedInput,
-  TextField,
-} from "@mui/material";
-import { FlexBox } from "@/components/atoms/basics";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import CircleIcon from "@mui/icons-material/Circle";
+import { Checkbox, FilledInput, TextField } from "@mui/material";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { useRouter } from "next/router";
+import { css } from "@emotion/css";
+import styled from "@emotion/styled";
+
 
 interface FormPageProps {}
 
@@ -113,33 +111,58 @@ const FormPage: React.FC<FormPageProps> = () => {
             <styles.AskContents>
               <styles.AskSubBox>
                 <styles.HorizontalBox>
-                  <styles.AskSubTitle>
+
+                  <styles.AskSubTitle
+                    className={css`
+                      column-gap: 10px;
+                      margin-right: 10px;
+                    `}
+                  >
                     <Checkbox
+                      icon={<CircleIcon />}
+                      checkedIcon={<CheckCircleIcon />}
                       name={Unions.first}
                       onChange={checkBoxInputHandler}
                     />
-                    총 학생회
+                    <Label>총 학생회</Label>
                   </styles.AskSubTitle>
                 </styles.HorizontalBox>
                 <styles.HorizontalBox>
-                  <styles.AskSubTitle>
+                  <styles.AskSubTitle
+                    className={css`
+                      column-gap: 10px;
+                      margin-right: 10px;
+                    `}
+                  >
                     <Checkbox
+                      icon={<CircleIcon />}
+                      checkedIcon={<CheckCircleIcon />}
                       name={Unions.second}
                       onChange={checkBoxInputHandler}
                     />
-                    단과대 학생회
+                    <Label>단과대 학생회</Label>
+
                   </styles.AskSubTitle>
                   <styles.AskSubContent>
                     <TextField variant="filled" style={{ width: "100%" }} />
                   </styles.AskSubContent>
                 </styles.HorizontalBox>
                 <styles.HorizontalBox>
-                  <styles.AskSubTitle>
+
+                  <styles.AskSubTitle
+                    className={css`
+                      column-gap: 10px;
+                      margin-right: 10px;
+                    `}
+                  >
                     <Checkbox
+                      icon={<CircleIcon />}
+                      checkedIcon={<CheckCircleIcon />}
                       name={Unions.third}
                       onChange={checkBoxInputHandler}
                     />
-                    과 학생회
+                    <Label>과 학생회</Label>
+
                   </styles.AskSubTitle>
                   <styles.AskSubContent>
                     <TextField
@@ -179,3 +202,11 @@ const FormPage: React.FC<FormPageProps> = () => {
 };
 
 export default FormPage;
+
+
+const Label = styled.p`
+  font-size: 1rem;
+  font-weight: 500;
+  width: 9rem;
+`;
+

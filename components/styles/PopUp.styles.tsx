@@ -69,6 +69,17 @@ export const TablePeriodTitle = styled.div`
   align-items: center;
 `;
 
+
+export const TableDeleteTitle = styled.div`
+  width: 35px;
+  border-radius: 6px;
+  background: #f7f7f7;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+
 export const PopUpsContainer = styled.div`
   border-radius: 6px;
   border: 1px solid #f7f7f7;
@@ -78,6 +89,20 @@ export const PopUpsContainer = styled.div`
 export const PopupContainer = styled.div`
   height: 58px;
   display: flex;
+`;
+
+
+export const DeleteBox = styled.div`
+  color: var(--, #3d4149);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 19.264px; /* 113.316% */
+  letter-spacing: -1.02px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  margin: 5px 8px;
+  border-bottom: 1px solid var(--g0, #f4f4f4);
 `;
 
 export const NumberBox = styled.div`

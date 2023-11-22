@@ -3,7 +3,9 @@ import axios from "axios";
 
 export const getStoreBase = async () => {
   try {
-    const response = await axiosInstance.get(`/store/search?pageSize=40`);
+
+    const response = await axiosInstance().get(`/store/search?pageSize=40`);
+
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
@@ -27,7 +29,9 @@ export const getStoreWithFilter = async ({
   pageNumber = 0,
 }: FilterProps) => {
   try {
-    const response = await axiosInstance.get(
+
+    const response = await axiosInstance().get(
+
       `/store/search?isPicked=${isPicked}${"&name=" + name}${
         "&category=" + category
       }&pageSize=40${"&pageNumber=" + pageNumber}`
@@ -43,7 +47,9 @@ export const getStoreWithFilter = async ({
 
 export const postPickStore = async (storeId: number) => {
   try {
-    const response = await axiosInstance.post(`/store/pick`, {
+
+    const response = await axiosInstance().post(`/store/pick`, {
+
       storeId: storeId,
     });
     return response.data;
@@ -57,7 +63,9 @@ export const postPickStore = async (storeId: number) => {
 
 export const deletePickStore = async (storeId: number) => {
   try {
-    const response = await axiosInstance.delete(`/store/pick`, {
+
+    const response = await axiosInstance().delete(`/store/pick`, {
+
       data: { storeId: storeId },
     });
     return response.data;
@@ -71,7 +79,9 @@ export const deletePickStore = async (storeId: number) => {
 
 export const getStoreInfo = async (storeId: number) => {
   try {
-    const response = await axiosInstance.get(`/store/details/${storeId}`);
+
+    const response = await axiosInstance().get(`/store/details/${storeId}`);
+
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {

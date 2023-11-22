@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
 
+import { Checkbox } from "@mui/material";
+
 interface HorizontalBox {
   column?: string;
 }
@@ -21,7 +23,6 @@ export const FlexBox = styled.div<HorizontalBox>`
   display: flex;
   flex-flow: ${(props) => (props?.column ? "column nowrap" : "row nowrap")};
 `;
-
 
 export const NumberBall = styled.div`
   width: 24px;

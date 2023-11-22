@@ -46,6 +46,13 @@ export const AskTitle = styled.div`
   font-weight: 600;
   line-height: normal;
   letter-spacing: -1.26px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  margin-top: 5px;
+
 `;
 
 export const AskContents = styled.div`
