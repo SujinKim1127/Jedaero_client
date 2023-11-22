@@ -2,6 +2,7 @@
   "name": "meetup-frontend",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://api.jedero.site",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
