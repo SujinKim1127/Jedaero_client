@@ -23,7 +23,7 @@ const AuthPage: React.FC<AuthProps> = () => {
   const [proofImage, setProofImage] = useState<File | null>(null);
 
   // input file changes
-  const handleFileInput = (e) => {
+  const handleFileInput = (e: any) => {
     const file = e.target.files[0];
     console.log(file);
     setProofImage(file);
@@ -31,7 +31,11 @@ const AuthPage: React.FC<AuthProps> = () => {
 
   const registerImage = async () => {
     try {
-      const response = await CreateImage(proofImage);
+      let response: any = "";
+      if (proofImage) {
+        response = await CreateImage(proofImage);
+      }
+
       setProofImage(response);
     } catch (err) {
       console.error(err);

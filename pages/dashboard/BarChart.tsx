@@ -5,7 +5,7 @@ import { Bar, ResponsiveContainer, BarChart, XAxis } from "recharts";
 interface DataProps {
   title: string;
   data: Array<ChartElement>;
-  color: string;
+  color?: string;
 }
 
 interface ChartElement {

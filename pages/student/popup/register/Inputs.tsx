@@ -169,7 +169,7 @@ const Inputs: React.FC = () => {
               </styles.BoxWithCheckBox>
               <DateTimePicker
                 label="선택해주세요"
-                onChange={(newValue) => {
+                onChange={(newValue: any) => {
                   let date = `${newValue.$y}-${newValue.$M}-${newValue.$D} ${newValue.$H}:${newValue.$m}`;
                   console.log(date);
                   setFormData((prev) => ({

@@ -10,11 +10,11 @@ interface UserProps {
 }
 
 interface CheckBoxValid {
-  first?: boolean;
-  second?: boolean;
-  third?: boolean;
-  fourth?: boolean;
-  fifth?: boolean;
+  first: boolean;
+  second: boolean;
+  third: boolean;
+  fourth: boolean;
+  fifth: boolean;
 }
 
 const UserPage: React.FC<UserProps> = () => {
@@ -82,7 +82,7 @@ const UserPage: React.FC<UserProps> = () => {
           <styles.AgreementInnerBox>
             <styles.Checks style={{ borderBottom: "1px solid #D0D0D0" }}>
               <Checkbox
-                onClick={(e: React.ChangeEvent<HTMLInputElement>) => {
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   const { checked } = e.target;
                   checked
                     ? setChecked({
@@ -93,6 +93,7 @@ const UserPage: React.FC<UserProps> = () => {
                         fifth: true,
                       })
                     : setChecked({
+                        first: true,
                         second: true,
                         third: true,
                         fourth: true,
@@ -106,7 +107,7 @@ const UserPage: React.FC<UserProps> = () => {
               <Checkbox
                 checked={checked.second}
                 name="second"
-                onClick={checkBoxHandler}
+                onChange={checkBoxHandler}
               />
               회원 서비스 이용약관 (필수)
             </styles.Checks>
@@ -114,7 +115,7 @@ const UserPage: React.FC<UserProps> = () => {
               <Checkbox
                 name="third"
                 checked={checked.third}
-                onClick={checkBoxHandler}
+                onChange={checkBoxHandler}
               />
               개인정보 수집 및 이용동의 (필수)
             </styles.Checks>
@@ -122,7 +123,7 @@ const UserPage: React.FC<UserProps> = () => {
               <Checkbox
                 name="fourth"
                 checked={checked.fourth}
-                onClick={checkBoxHandler}
+                onChange={checkBoxHandler}
               />
               개인정보의 제3자 제공 동의 (선택)
             </styles.Checks>
@@ -130,7 +131,7 @@ const UserPage: React.FC<UserProps> = () => {
               <Checkbox
                 name="fifth"
                 checked={checked.fifth}
-                onClick={checkBoxHandler}
+                onChange={checkBoxHandler}
               />
               마케팅 수신 동의 (선택)
             </styles.Checks>

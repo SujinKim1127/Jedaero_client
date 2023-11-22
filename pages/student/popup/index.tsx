@@ -1,4 +1,3 @@
-
 import { useRouter } from "next/router";
 import React from "react";
 import * as styles from "@/components/styles/popup/style";
@@ -40,7 +39,7 @@ const PopupAdminPage: React.FC = () => {
                 <styles.ListContent>{element.content}</styles.ListContent>
                 <styles.ListStore>
                   <styles.InfoBox>
-                    {element.endDate}/{element.reservation}
+                    {element.content}/{element.reservation}
                   </styles.InfoBox>
                 </styles.ListStore>
                 <styles.DeleteElement>
@@ -78,11 +77,8 @@ const PopupAdminPage: React.FC = () => {
         </styles.CustomButton>
         <styles.CustomButton primary={false}>삭제하기</styles.CustomButton>
       </div>
-
     </styles.Container>
   );
 };
 
-
 export default PopupAdminPage;
-
