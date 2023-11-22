@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import * as styles from "./Inputs.style";
+import * as styles from "@/components/styles/Inputs.style";
 import { css } from "@emotion/css";
 import { FilledInput, IconButton, InputAdornment } from "@mui/material";
 import SearchTwoToneIcon from "@mui/icons-material/SearchTwoTone";
