@@ -22,8 +22,10 @@ interface SignUpProps {
 // 로그인
 export const login = async ({ email, password }: LoginProps) => {
   try {
-    const loginEndpoint = process.env.NEXT_PUBLIC_LOGIN_ENDPOINT;
-    const response = await apiBase.post(loginEndpoint, { email, password });
+    const response = await apiBase.post(
+      `${process.env.NEXT_PUBLIC_LOGIN_ENDPOINT}`,
+      { email, password }
+    );
 
     const accessToken = response.headers.authorization;
     console.log("로그인 성공:", accessToken);
@@ -44,14 +46,16 @@ export const SignUp = async ({
   proofImageUrl,
 }: SignUpProps) => {
   try {
-    const signUpEndpoint = process.env.NEXT_PUBLIC_SIGNUP_ENDPOINT;
-    const response = await apiBase.post(signUpEndpoint, {
-      email,
-      password,
-      type,
-      typeName,
-      proofImageUrl,
-    });
+    const response = await apiBase.post(
+      `${process.env.NEXT_PUBLIC_SIGNUP_ENDPOINT}`,
+      {
+        email,
+        password,
+        type,
+        typeName,
+        proofImageUrl,
+      }
+    );
 
     return response.data;
   } catch (error) {
@@ -63,15 +67,18 @@ export const SignUp = async ({
 // 이미지 업로드 (회원가입 전에)
 export const CreateImage = async (file: File) => {
   try {
-    const createImageEndpoint = process.env.NEXT_PUBLIC_CREATE_IMAGE_ENDPOINT;
     const formData = new FormData();
     formData.append("file", file);
 
-    const response = await apiBase.post(createImageEndpoint, formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    });
+    const response = await apiBase.post(
+      `${process.env.NEXT_PUBLIC_CREATE_IMAGE_ENDPOINT}`,
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
 
     return response.data;
   } catch (error) {
@@ -92,7 +99,7 @@ export const Logout = async () => {
   }
   try {
     const response = await apiBase.post(
-      process.env.NEXT_PUBLIC_LOGOUT_ENDPOINT,
+      `${process.env.NEXT_PUBLIC_LOGOUT_ENDPOINT}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -104,4 +111,3 @@ export const Logout = async () => {
     console.error(`에러코드 : ${e}`);
   }
 };
-

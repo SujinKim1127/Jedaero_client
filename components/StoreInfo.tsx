@@ -54,7 +54,7 @@ const StoreInfo = ({ storeId }: SInfo) => {
       <ContactBox>
         <ContactTitleBox>전화 컨택 가이드</ContactTitleBox>
         <ContactContentBox>
-          🙂 안녕하세요, 건국대학교 예술대학 학생회 ‘다빈치' 입니다. 건국대 상권
+          🙂 안녕하세요, 건국대학교 예술대학 학생회 다빈치 입니다. 건국대 상권
           활성화를 위한 제휴 사업을 제한하고자 합니다.
         </ContactContentBox>
         <EditBox>

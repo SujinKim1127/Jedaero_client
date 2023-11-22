@@ -15,7 +15,7 @@ const data01 = [
 const SecondBox: React.FC<SecondBoxProps> = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const onPieEnter = (_, index) => {
+  const onPieEnter = (_: any, index: any) => {
     setActiveIndex(index);
   };
 
@@ -46,7 +46,7 @@ const SecondBox: React.FC<SecondBoxProps> = () => {
   );
 };
 
-const renderActiveShape = (props) => {
+const renderActiveShape = (props: any) => {
   const RADIAN = Math.PI / 180;
   const {
     cx,

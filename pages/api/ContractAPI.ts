@@ -9,7 +9,7 @@ export const getContractBase = async ({
   pageNumber = 0,
 }: FilterProps) => {
   try {
-    const response = await axiosInstance.get(
+    const response = await axiosInstance().get(
       `/contract?isPicked=${isPicked}&name=${name}&category=${category}&pageSize=40&pageNumber=${pageNumber}`
     );
     return response.data;
@@ -23,7 +23,7 @@ export const getContractBase = async ({
 
 export const getContractInfo = async (id: number) => {
   try {
-    const response = await axiosInstance.get(`/contract/details/${id}`);
+    const response = await axiosInstance().get(`/contract/details/${id}`);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {

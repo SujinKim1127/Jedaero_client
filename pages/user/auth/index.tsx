@@ -1,8 +1,6 @@
 import * as phase from "@/components/styles/user/first/style";
 import * as styles from "@/components/styles/user/third/style";
 import { CreateImage, SignUp } from "@/pages/api/login";
-import { Button, Checkbox, TextField } from "@mui/material";
-import axios from "axios";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
@@ -17,13 +15,12 @@ const AuthPage: React.FC<AuthProps> = () => {
 
   // states
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
   const [proofImage, setProofImage] = useState<File | null>(null);
 
   // input file changes
-  const handleFileInput = (e) => {
+  const handleFileInput = (e: any) => {
     const file = e.target.files[0];
     console.log(file);
     setProofImage(file);
@@ -31,7 +28,11 @@ const AuthPage: React.FC<AuthProps> = () => {
 
   const registerImage = async () => {
     try {
-      const response = await CreateImage(proofImage);
+      let response: any = "";
+      if (proofImage) {
+        response = await CreateImage(proofImage);
+      }
+
       setProofImage(response);
     } catch (err) {
       console.error(err);
