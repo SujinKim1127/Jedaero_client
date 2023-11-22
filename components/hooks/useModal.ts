@@ -1,5 +1,5 @@
 import { useSetRecoilState } from "recoil";
-import { modalState } from "../atoms/modalState";
+import modalState from "../atoms/modalState";
 
 export const useModal = () => {
   const setModalOpen = useSetRecoilState(modalState);
