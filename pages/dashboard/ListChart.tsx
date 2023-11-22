@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import * as containerStyle from "./SecondBox.styles";
+import * as containerStyle from "../../components/styles/SecondBox.styles";
 import { css } from "@emotion/css";
 import { NumberBall } from "@/components/atoms/basics";
 

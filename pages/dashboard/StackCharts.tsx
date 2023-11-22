@@ -10,7 +10,7 @@ interface ThirdBoxProps {
   children?: ReactNode;
 }
 
-import * as styles from "./SecondBox.styles";
+import * as styles from "../../components/styles/SecondBox.styles";
 
 const ThirdBox: React.FC<ThirdBoxProps> = () => {
   return (
