@@ -5,19 +5,24 @@ import type { AppProps } from "next/app";
 import { RecoilRoot } from "recoil";
 import styled from "@emotion/styled";
 import { css, Global } from "@emotion/react";
-
+import LoginModal from "@/components/organisms/Modal";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
-      <RecoilRoot>
-        <Global styles={globalStyles} />
-        <PageLayout>
-          <Header />
-          <MainContent>
-            <Component {...pageProps} />
-          </MainContent>
-        </PageLayout>
-      </RecoilRoot>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <RecoilRoot>
+          <Global styles={globalStyles} />
+          <PageLayout>
+            <Header />
+            <LoginModal />
+            <MainContent>
+              <Component {...pageProps} />
+            </MainContent>
+          </PageLayout>
+        </RecoilRoot>
+      </LocalizationProvider>
     </ThemeProvider>
   );
 }
@@ -43,11 +48,9 @@ const PageLayout = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: red;
 `;
 
 const MainContent = styled.main`
   flex: 1;
-  padding: 20px;
-  background-color: gray;
+
 `;
