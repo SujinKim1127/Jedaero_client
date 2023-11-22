@@ -45,7 +45,6 @@ const Header = () => {
     });
   };
 
-
   return (
     <HeaderFrame>
       <Logo
@@ -59,29 +58,23 @@ const Header = () => {
       />
       <UserMenu>
         <ul>
-
           <UpperMenuItem
             onClick={() => {
               if (userSessionData) {
                 logoutHandler();
-
               } else {
                 openModal();
               }
             }}
           >
-
             {userSessionData ? "로그아웃" : "로그인"}
-
           </UpperMenuItem>
 
           <UpperMenuItem>
             <Link href="/user">회원가입</Link>
           </UpperMenuItem>
           <UpperMenuItem>
-
             <Link href="/mypage">마이페이지</Link>
-
           </UpperMenuItem>
           <UpperMenuItem>
             <NotificationsNoneOutlinedIcon />
@@ -91,7 +84,6 @@ const Header = () => {
       <DefaultMenu>
         <ul>
           <LowerMenuItem>
-
             <Link href="/dashboard">대시보드</Link>
           </LowerMenuItem>
           <LowerMenuItem>
@@ -102,7 +94,6 @@ const Header = () => {
           </LowerMenuItem>
           <LowerMenuItem>
             학생관리
-
             <SubDropdownMenu>
               <SubDropdownMenuItem>
                 <Link href="/student/popup">팝업관리</Link>
@@ -176,7 +167,6 @@ const SubDropdownMenuItem = styled.div`
   width: 100px;
   height: 1.5rem;
 
-
   padding: 3px 0px;
 
   &:hover {
@@ -187,7 +177,6 @@ const SubDropdownMenuItem = styled.div`
 
 const LowerMenuItem = styled.li`
   position: relative;
-
 
   color: var(--, #3d4149);
   text-align: center;
