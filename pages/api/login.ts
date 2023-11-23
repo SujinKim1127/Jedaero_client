@@ -1,4 +1,5 @@
 import axios from "axios";
+import { axiosInstance } from "./axiosInstance";
 
 const apiBase = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
@@ -89,25 +90,14 @@ export const CreateImage = async (file: File) => {
 
 // 로그아웃
 export const Logout = async () => {
-  const userSession = sessionStorage.getItem("userSession");
-  let token: string = "";
-  if (userSession) {
-    const parsedSession = JSON.parse(userSession);
-    token = parsedSession.user?.token || "";
-  } else {
-    console.log("유저세션 없음");
-  }
+
+
   try {
-    const response = await apiBase.post(
-      `${process.env.NEXT_PUBLIC_LOGOUT_ENDPOINT}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const url = `${process.env.NEXT_PUBLIC_API_URL}${process.env.NEXT_PUBLIC_LOGOUT_ENDPOINT}`;
+    const response = await axiosInstance().post(url);
     return response.data;
   } catch (e) {
-    console.error(`에러코드 : ${e}`);
+    console.error(`Error 코드 : ${e}`);
   }
 };
+

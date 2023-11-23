@@ -1,14 +1,7 @@
 import { getPopups } from "@/pages/api/popup";
 import { useEffect, useState } from "react";
 
-// enum PopupPeriod {
-//   none,
 
-//   aDay = "하루간",
-//   aWeek = "1주간",
-//   twoWeek = "2주간",
-//   aMonth = "1달간",
-// }
 
 interface Popup {
   title: string;
@@ -19,6 +12,7 @@ interface Popup {
 }
 
 export const usePopupData = () => {
+
   const [popups, setPopups] = useState<Popup[]>([]);
 
   // api 호출해서 초기화
@@ -28,6 +22,7 @@ export const usePopupData = () => {
       console.log(data);
 
       data && setPopups(data.content);
+
     };
 
     fetchData();
@@ -35,3 +30,4 @@ export const usePopupData = () => {
 
   return { popups };
 };
+

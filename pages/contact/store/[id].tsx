@@ -38,6 +38,7 @@ const ContactStore = () => {
     storeId: 0,
     storeName: "",
     visitInfo: {},
+    address: "",
   });
 
   const router = useRouter();
@@ -140,15 +141,17 @@ const ContactStore = () => {
                 <styled.SmallIconBox>
                   <Place alt="place icon" width={22} height={22} />
                 </styled.SmallIconBox>
-                <styled.TextBox>{/** TODO: address 연결 */}</styled.TextBox>
+                <styled.TextBox>{data.address}</styled.TextBox>
               </styled.StoreInfoBox>
               <styled.StoreInfoBox>
                 <styled.SmallIconBox>
                   <Benefit alt="Benefit icon" width={22} height={22} />
                 </styled.SmallIconBox>
                 <styled.TextBox>
-                  주문시
-                  <styled.PercentBox>15% 할인</styled.PercentBox>
+                  {data.benefits[0]?.condition}
+                  <styled.PercentBox>
+                    {data.benefits[0]?.content}
+                  </styled.PercentBox>
                 </styled.TextBox>
               </styled.StoreInfoBox>
               <styled.StoreInfoBox>

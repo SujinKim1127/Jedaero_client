@@ -3,13 +3,16 @@ import styled from "@emotion/styled";
 import EditIcon from "@/assets/svg/Edit.svg";
 import { useEffect, useState } from "react";
 import { getStoreInfo } from "@/pages/api/StoreAPI";
-import { StoreDetailInfo } from "@/@types/Store";
+import { StoreDetailInfo, businessHour } from "@/@types/Store";
+import SmallDropDown from "@/assets/svg/SmallDropDown.svg";
+import SmallDropTop from "@/assets/svg/SmallDropTop.svg";
 
 interface SInfo {
   storeId: number;
 }
 
 const StoreInfo = ({ storeId }: SInfo) => {
+  const [isdrop, setIsDrop] = useState<boolean>(false);
   const [data, setData] = useState<StoreDetailInfo>({
     address: "",
     businessHours: [],
@@ -31,11 +34,56 @@ const StoreInfo = ({ storeId }: SInfo) => {
     });
   }, []);
 
+  function getTodayBusinessHours(today: string): businessHour | undefined {
+    return data.businessHours.find((hours) => hours.dayOfWeek === today);
+  }
+
+  // 현재 날짜를 기반으로 요일을 얻어온다. (예: 일요일 → '일')
+  const today: string = new Date().toLocaleDateString("ko-KR", {
+    weekday: "short",
+  });
+
+  // 오늘 요일에 해당하는 운영 시간을 얻어온다.
+  const todayBusinessHours: businessHour | undefined =
+    getTodayBusinessHours(today);
+
+  const handleOnClickDropDown = () => {
+    setIsDrop(!isdrop);
+  };
+
   return (
     <Container>
       <InfoListBox>
         <InfoTypeBox>영업 시간</InfoTypeBox>
-        <InfoDescriptionBox>09:00</InfoDescriptionBox>
+        <TimeContainer>
+          <TodayContainer>
+            {data.businessHours.length !== 0 && (
+              <InfoDescriptionBox>
+                오늘
+                {" " +
+                  todayBusinessHours?.openingTime +
+                  " ~ " +
+                  todayBusinessHours?.closingTime}
+              </InfoDescriptionBox>
+            )}
+            {data.businessHours.length === 0 ? (
+              ""
+            ) : (
+              <DropdownBox onClick={handleOnClickDropDown}>
+                {isdrop ? <SmallDropTop /> : <SmallDropDown />}
+              </DropdownBox>
+            )}
+          </TodayContainer>
+          {isdrop &&
+            data.businessHours.map((el: businessHour, idx: number) => {
+              return (
+                <InfoDescriptionBox key={idx}>
+                  {el.dayOfWeek + " " + el.openingTime + " ~ " + el.closingTime}
+                </InfoDescriptionBox>
+              );
+            })}
+          {}
+        </TimeContainer>
       </InfoListBox>
       <InfoListBox>
         <InfoTypeBox>가게 번호</InfoTypeBox>
@@ -91,6 +139,7 @@ const InfoTypeBox = styled.div`
   align-items: center;
   gap: 10px;
   width: 80px;
+  height: 22px;
 `;
 
 const InfoDescriptionBox = styled.div`
@@ -101,6 +150,8 @@ const InfoDescriptionBox = styled.div`
   font-weight: 400;
   line-height: 19.264px; /* 137.598% */
   letter-spacing: -0.84px;
+  display: flex;
+  align-items: center;
 `;
 
 const ContactBox = styled.div`
@@ -154,6 +205,21 @@ const EditTxt = styled.div`
   line-height: 19.264px; /* 160.532% */
   letter-spacing: -0.72px;
   margin-right: 5px;
+`;
+
+const TimeContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const TodayContainer = styled.div`
+  display: flex;
+`;
+
+const DropdownBox = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
 `;
 
 export default StoreInfo;

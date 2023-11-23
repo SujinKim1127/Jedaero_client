@@ -8,6 +8,7 @@ import Logo from "@/components/atoms/Logo.svg";
 import ModalCloseButton from "@/components/atoms/ModalCloseBtn.svg";
 import { login } from "@/pages/api/login";
 import { initialState } from "@/state/user/user";
+import { useRouter } from "next/router";
 
 interface ModalProps {
   children?: React.ReactNode;
@@ -18,6 +19,10 @@ const LoginModal: React.FC<ModalProps> = () => {
 
   const { closeModal } = useModal();
 
+
+  const router = useRouter();
+
+
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const setLoginedUserState = useSetRecoilState(initialState);
@@ -27,17 +32,15 @@ const LoginModal: React.FC<ModalProps> = () => {
       const result = await login({ email: email, password: password });
       setLoginedUserState((prev) => ({
         ...prev,
+        logined: true,
         token: result.accessToken,
       }));
+      router.reload();
       return result.data;
     } catch (error) {
       console.error(error);
     }
   };
-
-  useEffect(() => {
-    console.log(`${email} + ${password}`);
-  }, []);
 
   if (!isOpen) return null;
   return (
