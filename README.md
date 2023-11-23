@@ -15,39 +15,51 @@ https://jedero.site/
 
 
 💻 Technology
-Web / App
+
 WEB
+
 Next.js
+
 Typescript
+
 React Emotion
+
 Recoil
+
 MUI
-APP
-React native expo
-styled-components
-Jotai
-React native paper
 
 
 
 Server
 
 Server Application
+
 Spring Boot
+
 Spring Security
+
 Spring Data JPA
-DataBase
+
 MySQL
-CI/CD
+
+Github Action
+
 Docker
+
+Docker Compose
 
 Co-working-tool
 
 개발진행상황 동기화
+
 Trello
+
 의사소통 / 회의
+
 Slack, Discord
+
 형상관리
+
 Github
 
 
