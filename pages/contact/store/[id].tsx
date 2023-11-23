@@ -176,7 +176,11 @@ const ContactStore = () => {
             <styled.DashBoardsBox>
               <styled.DashTopBox>
                 <styled.DashTitleBox>대시보드</styled.DashTitleBox>
-                <styled.NextBox>
+                <styled.NextBox
+                  onClick={() => {
+                    router.push(`/dashboard/${data?.storeName}`);
+                  }}
+                >
                   <NextBtn alt="next button" width={24} height={24} />
                 </styled.NextBox>
               </styled.DashTopBox>

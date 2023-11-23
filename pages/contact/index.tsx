@@ -13,9 +13,11 @@ import { useRouter } from "next/router";
 import { FilterProps } from "../api/StoreAPI";
 import SearchModal from "@/components/organisms/Modal/\bSearchModal";
 import Link from "next/link";
+import OperateModal from "@/components/organisms/Modal/OperateModal";
 
 export default function Contact() {
   const [data, setData] = useState<ContractListInfo[]>();
+  const [isOperate, setIsOperate] = useState<boolean>(false);
   const [operateFilter, setOperateFilter] = useState<FilterProps>({
     isPicked: false,
     name: "",
@@ -89,7 +91,13 @@ export default function Contact() {
               1년 동안 제휴를 맺은 가게들이에요.
             </styles.SubTitleBox>
           </styles.TopTitleBox>
-          <styles.BlackButtonBox>정산관리</styles.BlackButtonBox>
+          <styles.BlackButtonBox
+            onClick={() => {
+              setIsOperate(true);
+            }}
+          >
+            정산관리
+          </styles.BlackButtonBox>
         </styles.TopBox>
         <styles.MiddleBox>
           <styles.FilterBox>
@@ -144,6 +152,7 @@ export default function Contact() {
       {isSearchModalOpen && (
         <SearchModal setIsSearchOpen={handleOnClickSearchBtn} />
       )}
+      {isOperate && <OperateModal setIsOperate={setIsOperate} />}
     </>
   );
 }

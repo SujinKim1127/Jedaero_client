@@ -19,9 +19,7 @@ const LoginModal: React.FC<ModalProps> = () => {
 
   const { closeModal } = useModal();
 
-
   const router = useRouter();
-
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -148,6 +146,7 @@ const SignUpWrapper = styled.div`
 `;
 
 const Container = styled.div`
+  padding-top: 10px 0px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -235,8 +234,6 @@ const SocialLoginOptions = styled.div`
   justify-content: center;
   column-gap: 20px;
   padding: 10px 5px;
-
-  border-top: 0.5px solid gray;
 
   width: 100%;
 `;

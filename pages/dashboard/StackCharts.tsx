@@ -6,13 +6,20 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
-interface ThirdBoxProps {
-  children?: ReactNode;
-}
 
 import * as styles from "../../components/styles/SecondBox.styles";
 
-const ThirdBox: React.FC<ThirdBoxProps> = () => {
+interface ChartProps {
+  data: Data[];
+}
+
+interface Data {
+  name: string;
+  uv: number;
+  pv: number;
+  amt: number;
+}
+const ThirdBox: React.FC<ChartProps> = ({ data }) => {
   return (
     <styles.Container>
       <styles.TitleBox>
@@ -35,12 +42,7 @@ const ThirdBox: React.FC<ThirdBoxProps> = () => {
             {/* <XAxis dataKey="name" /> */}
             {/* <YAxis /> */}
             <Tooltip />
-            <Area
-              type="monotone"
-              dataKey="uv"
-              stroke="#8884d8"
-              fill="#0E6EFF"
-            />
+            <Area type="monotone" dataKey="uv" stroke="black" fill="#0E6EFF" />
           </AreaChart>
         </ResponsiveContainer>
       </styles.ChartBox>
@@ -48,48 +50,4 @@ const ThirdBox: React.FC<ThirdBoxProps> = () => {
   );
 };
 
-const data = [
-  {
-    name: "Page A",
-    uv: 800,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: "Page B",
-    uv: 1100,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: "Page C",
-    uv: 1000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: "Page D",
-    uv: 1300,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: "Page G",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
 export default ThirdBox;

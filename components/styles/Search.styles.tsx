@@ -6,23 +6,34 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
-  width: 919px;
+  width: 1050px;
+  padding-top: 1rem;
 `;
+
+export const TopTitleBox = styled.div``;
 
 export const TitleBox = styled.div`
   color: var(--, #1c1c1e);
   font-size: 26px;
   font-style: normal;
-  font-weight: 600;
-  line-height: 16.53px; /* 63.577% */
+  font-weight: 500;
   letter-spacing: -1.56px;
+`;
+
+export const SubTitleBox = styled.div`
+  margin-top: 12px;
+  color: var(--, #1c1c1e);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 19.264px; /* 128.425% */
+  letter-spacing: -0.9px;
 `;
 
 export const MiddleBox = styled.div`
   display: flex;
-  margin-top: 64px;
-  margin-bottom: 37px;
   width: 919px;
+  margin: 64px auto 37px;
 `;
 
 export const FiltersBox = styled.div`
@@ -140,6 +151,7 @@ export const HeartTextBox = styled.div`
 
 export const MainBox = styled.div`
   display: flex;
+  margin: auto;
 `;
 
 export const MapBox = styled.div`

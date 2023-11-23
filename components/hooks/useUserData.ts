@@ -13,7 +13,7 @@ export const useUserData = () => {
 };
 
 const exData = {
-  name: "건국대학교 예술대학학생회 ‘뿡뿡’",
+  name: "건국대학교 예술대학학생회",
   phoneNum: "010-5340-5490",
-  email: "konkuk.admin@gmail.com",
+  email: "konkuk@gmail.com",
 };

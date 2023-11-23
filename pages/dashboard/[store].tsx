@@ -50,9 +50,7 @@ const StorePage = () => {
           <FirstLayerChart title="신규 방문 인원" content="5" />
         </styles.SecondBox>
         <styles.ThirdBox>
-
           <FirstLayerChart title="평균 혜택 이용 수" content="1.3회" />
-
         </styles.ThirdBox>
         <styles.FourthBox>
           <ComposedChart title="총 판매 금액 & 제휴 제공 금액" />
@@ -86,7 +84,7 @@ const data = [
   },
   {
     name: "화요일",
-    uv: 1000,
+    uv: 1500,
     pv: 1398,
     amt: 2210,
   },
@@ -98,7 +96,7 @@ const data = [
   },
   {
     name: "목요일",
-    uv: 1200,
+    uv: 2400,
     pv: 3908,
     amt: 2000,
   },
@@ -110,7 +108,7 @@ const data = [
   },
   {
     name: "토요일",
-    uv: 1500,
+    uv: 3100,
     pv: 3800,
     amt: 2500,
   },

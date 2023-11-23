@@ -33,7 +33,7 @@ export const TitleBox = styled.div`
 `;
 
 export const Title = styled.p`
-  font-size: 1rem;
+  font-size: 17px;
   color: var(--g3, #636366);
   font-weight: 500;
 `;

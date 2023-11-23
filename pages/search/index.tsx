@@ -87,7 +87,12 @@ export default function SearchHome() {
 
   return (
     <styles.Container>
-      <styles.TitleBox>가게 찾기</styles.TitleBox>
+      <styles.TopTitleBox>
+        <styles.TitleBox>가게 찾기</styles.TitleBox>
+        <styles.SubTitleBox>
+          제휴를 진행할 가게를 찾아보세요.
+        </styles.SubTitleBox>
+      </styles.TopTitleBox>
       <styles.MiddleBox>
         <Filter setContentFilter={setContentFilter} />
         {/** TODO: 누르면 expand로 변경되도록 */}

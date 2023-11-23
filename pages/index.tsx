@@ -1,20 +1,24 @@
 import Head from "next/head";
 
 import styled from "@emotion/styled";
+import Background from "@/assets/svg/background.gif";
+
+import Background2 from "@/assets/svg/background2.png";
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>제대로, ~~~~~~</title>
+        <title>
+          제대로,학생과 학생회, 가게 모두의 소소한 행복이 되는 제휴사업이 되도록
+        </title>
       </Head>
       <Container>
-        <LandingTitle>학생과 학생회, 가게 모두의</LandingTitle>
-        <LandingTitle>소소한 행복이 되는 제휴사업이 되도록</LandingTitle>
+        <LandingTitle></LandingTitle>
+        <LandingTitle></LandingTitle>
       </Container>
     </>
   );
-
 }
 
 const Container = styled.div`
@@ -26,6 +30,14 @@ const Container = styled.div`
 
   padding-top: 5%;
   padding-left: 10%;
+
+  width: 100%;
+
+  height: 100vh;
+  background-image: url(${Background.src});
+  /* background-image: url(${Background2.src}); */
+
+  background-size: cover;
 `;
 
 const LandingTitle = styled.p`

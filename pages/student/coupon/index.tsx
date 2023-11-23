@@ -1,7 +1,8 @@
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
-import * as styles from "@/components/styles/popup/style";
 
+import React, { useState } from "react";
+
+import * as styles from "@/components/styles/popup/style";
 import { css } from "@emotion/css";
 import { useCouponData } from "@/components/hooks/useCouponData";
 import Link from "next/link";
@@ -55,7 +56,6 @@ const CouponAdminPage: React.FC = () => {
         </styles.LabelBox>
         <styles.ListBox>
           {coupons.length !== 0 ? (
-
             coupons.map((element, index) => {
               return (
                 <styles.ListElement key={index}>

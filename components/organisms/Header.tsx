@@ -13,8 +13,6 @@ import { Logout } from "@/pages/api/login";
 import { Box, Button, Modal } from "@mui/material";
 import { css } from "@emotion/css";
 
-
-
 const Header = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const handleOpen = () => {
@@ -39,15 +37,11 @@ const Header = () => {
   }, [userSessionData]);
 
   const logoutHandler = async () => {
-
-
     console.log("logout합니다");
     const result = await Logout();
     console.log(result);
 
     setLogData({
-
-
       logined: false,
       email: "",
       type: "",
@@ -124,22 +118,14 @@ const Header = () => {
           <UpperMenuItem
             onClick={() => {
               if (userSessionData) {
-
-
                 setModalOpen(true);
                 logoutHandler();
-
-
               } else {
                 openModal();
               }
             }}
           >
-
-
             {userSessionData ? "로그아웃" : "로그인"}
-
-
           </UpperMenuItem>
 
           <UpperMenuItem>
@@ -166,7 +152,6 @@ const Header = () => {
           </LowerMenuItem>
           <LowerMenuItem>
             학생관리
-
             <SubDropdownMenu>
               <SubDropdownMenuItem>
                 <Link href="/student/popup">팝업관리</Link>
@@ -258,7 +243,6 @@ const SubDropdownMenuItem = styled.div`
   width: 100px;
   height: 1.5rem;
 
-
   padding: 3px 0px;
 
   &:hover {
@@ -274,7 +258,7 @@ const LowerMenuItem = styled.li`
   text-align: center;
   font-family: Pretendard;
 
-  font-size: 16px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 17.818px; /* 111.364% */
@@ -299,7 +283,7 @@ const UpperMenuItem = styled.li`
   color: #000;
   text-align: center;
   font-family: Pretendard;
-  font-size: 10px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: 14px; /* 140% */

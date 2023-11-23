@@ -1,18 +1,23 @@
 import { ReactNode, useState } from "react";
 import * as styles from "../../components/styles/SecondBox.styles";
 import { Pie, PieChart, ResponsiveContainer, Sector, Tooltip } from "recharts";
-interface SecondBoxProps {
-  children?: ReactNode;
+
+// const data01 = [
+//   { name: "대학교 1학년", value: 40 },
+//   { name: "대학교 2학년", value: 30 },
+//   { name: "대학교 3학년", value: 10 },
+//   { name: "대학교 4학년", value: 20 },
+// ];
+
+interface ChartProps {
+  data: Data[];
+}
+interface Data {
+  name: string;
+  value: number;
 }
 
-const data01 = [
-  { name: "대학교 1학년", value: 40 },
-  { name: "대학교 2학년", value: 30 },
-  { name: "대학교 3학년", value: 10 },
-  { name: "대학교 4학년", value: 20 },
-];
-
-const SecondBox: React.FC<SecondBoxProps> = () => {
+const SecondBox: React.FC<ChartProps> = ({ data }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const onPieEnter = (_: any, index: any) => {
@@ -30,12 +35,12 @@ const SecondBox: React.FC<SecondBoxProps> = () => {
             <Pie
               activeIndex={activeIndex}
               activeShape={renderActiveShape}
-              data={data01}
+              data={data}
               cx="50%"
               cy="50%"
               innerRadius={60}
               outerRadius={80}
-              fill="#8884d8"
+              fill="#0E6EFF"
               dataKey="value"
               onMouseEnter={onPieEnter}
             />
