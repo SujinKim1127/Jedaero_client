@@ -6,10 +6,9 @@ export type ContractListInfo = {
 };
 
 type Benefit = {
-  amount: number;
   benfitId: number;
   content: string;
-  type: "FIX" | "RATE" | "MENU";
+  condition: string;
 };
 
 export type ContractInfo = {
@@ -25,4 +24,5 @@ export type ContractInfo = {
   storeId: number;
   storeName: string;
   visitInfo: object;
+  address: string;
 };

@@ -3,7 +3,8 @@ import { Checkbox } from "@mui/material";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import CircleIcon from "@mui/icons-material/Circle";
 interface UserProps {
   name?: string;
   isLogin?: boolean;
@@ -82,6 +83,12 @@ const UserPage: React.FC<UserProps> = () => {
           <styles.AgreementInnerBox>
             <styles.Checks style={{ borderBottom: "1px solid #D0D0D0" }}>
               <Checkbox
+
+
+                icon={<CircleIcon />}
+                checkedIcon={<CheckCircleIcon />}
+
+
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   const { checked } = e.target;
                   checked
@@ -105,6 +112,8 @@ const UserPage: React.FC<UserProps> = () => {
             </styles.Checks>
             <styles.Checks>
               <Checkbox
+                icon={<CircleIcon />}
+                checkedIcon={<CheckCircleIcon />}
                 checked={checked.second}
                 name="second"
                 onChange={checkBoxHandler}
@@ -113,6 +122,8 @@ const UserPage: React.FC<UserProps> = () => {
             </styles.Checks>
             <styles.Checks>
               <Checkbox
+                icon={<CircleIcon />}
+                checkedIcon={<CheckCircleIcon />}
                 name="third"
                 checked={checked.third}
                 onChange={checkBoxHandler}
@@ -121,6 +132,8 @@ const UserPage: React.FC<UserProps> = () => {
             </styles.Checks>
             <styles.Checks>
               <Checkbox
+                icon={<CircleIcon />}
+                checkedIcon={<CheckCircleIcon />}
                 name="fourth"
                 checked={checked.fourth}
                 onChange={checkBoxHandler}
@@ -129,6 +142,8 @@ const UserPage: React.FC<UserProps> = () => {
             </styles.Checks>
             <styles.Checks>
               <Checkbox
+                icon={<CircleIcon />}
+                checkedIcon={<CheckCircleIcon />}
                 name="fifth"
                 checked={checked.fifth}
                 onChange={checkBoxHandler}

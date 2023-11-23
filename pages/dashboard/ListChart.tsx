@@ -37,7 +37,7 @@ const ListChart: React.FC<ListProps> = ({ title, contents }) => {
                   `}
                   key={index}
                 >
-                  <NumberBall>{index}</NumberBall>
+                  <NumberBall>{index + 1}</NumberBall>
                   <RankTitle>{element}</RankTitle>
                 </div>
               );

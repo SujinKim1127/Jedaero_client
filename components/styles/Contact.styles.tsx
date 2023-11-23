@@ -2,10 +2,11 @@ import { COLORS } from "@/styles/colors";
 import styled from "@emotion/styled";
 
 export const Container = styled.div`
-  width: 920px;
+  width: 1050px;
   display: flex;
   flex-direction: column;
   margin: auto;
+  padding-bottom: 100px;
 `;
 
 export const TopBox = styled.div`
@@ -115,8 +116,8 @@ export const MainBox = styled.div`
 `;
 
 export const StoreContainer = styled.div`
-  width: 216px;
-  height: 179px;
+  width: 250px;
+  height: 200px;
   border-radius: 10px;
   padding: 17px;
   border-radius: 5px;
@@ -157,8 +158,6 @@ export const StoreNameBox = styled.div`
   text-align: center;
   font-size: 25px;
   font-weight: 600;
-  line-height: 19.264px; /* 77.055% */
-  letter-spacing: -1.5px;
 `;
 
 export const BenefitBox = styled.div`
@@ -173,10 +172,10 @@ export const ConditionBox = styled.div`
   font-weight: 400;
   line-height: 25.043px; /* 160.532% */
   letter-spacing: -0.936px;
+  margin-right: 7px;
 `;
 
 export const PercentBox = styled.div`
-  margin-left: 7px;
   display: inline-flex;
   padding: 0px 3.9px;
   justify-content: center;
