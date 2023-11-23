@@ -9,6 +9,8 @@ export const Container = styled(FlexTemplate)`
   margin: 0px auto;
 
   row-gap: 3rem;
+
+  height: 80vh;
 `;
 
 export const UpperContainer = styled(FlexTemplate)`

@@ -20,18 +20,35 @@ const MyPage: React.FC = () => {
         <Background />
 
         <ContentsWrapper>
-          <Title>내 프로필</Title>
           <Konkuk />
           <DetailBox>
-            <Name>{name}</Name>
-            <LineBox>
-              <Word>이메일</Word>
-              <Word>{email}</Word>
-            </LineBox>
-            <LineBox>
-              <Word>대표 전화번호</Word>
-              <Word>{phoneNum}</Word>
-            </LineBox>
+            <div
+              className={css`
+                display: flex;
+                column-gap: 5px;
+              `}
+            >
+              <Title>{name}</Title>
+              <Badge>다빈치</Badge>
+            </div>
+
+            <div
+              className={css`
+                margin-top: 20px;
+                display: flex;
+                flex-flow: column nowrap;
+                row-gap: 10px;
+              `}
+            >
+              <LineBox>
+                <Word>대표자 전화번호 </Word>
+                <Contents>{phoneNum}</Contents>
+              </LineBox>
+              <LineBox>
+                <Word>학생회 이메일</Word>
+                <Contents>{email}</Contents>
+              </LineBox>
+            </div>
           </DetailBox>
         </ContentsWrapper>
       </ContentsBox>
@@ -60,8 +77,7 @@ const ContentsWrapper = styled.div`
   transform: translate(-50%, -50%);
 
   height: 100%;
-  width: 510px;
-  color: white;
+  width: 412px;
 
   display: flex;
   flex-flow: column nowrap;
@@ -72,13 +88,11 @@ const ContentsWrapper = styled.div`
 `;
 
 const Title = styled.p`
-  color: #fff;
-  font-family: Pretendard Variable;
-  font-size: 18px;
+  color: var(--, #3d4149);
+  font-family: Pretendard;
+  font-size: 21.297px;
   font-style: normal;
-  font-weight: 500;
-
-  margin-bottom: 1.5rem;
+  font-weight: 600;
 `;
 
 const Name = styled.p`
@@ -91,12 +105,20 @@ const Name = styled.p`
   margin-bottom: 20px;
 `;
 
-const Word = styled.p`
-  color: #fff;
+const Contents = styled.p`
+  color: var(--sb, #2d3036);
   font-family: Pretendard Variable;
-  font-size: 14px;
+  font-size: 16.564px;
   font-style: normal;
   font-weight: 400;
+`;
+
+const Word = styled.p`
+  color: var(--g2, #aeaeb2);
+  font-family: Pretendard;
+  font-size: 18.93px;
+  font-style: normal;
+  font-weight: 600;
 `;
 
 const DetailBox = styled(FlexTemplate)`
@@ -107,4 +129,22 @@ const DetailBox = styled(FlexTemplate)`
 const LineBox = styled(FlexTemplate)`
   flex-flow: row nowrap;
   justify-content: space-between;
+`;
+
+const Badge = styled(FlexTemplate)`
+  color: var(--sub3, #dfff60);
+  font-family: Pretendard;
+  font-size: 18.457px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 29.63px; /* 160.532% */
+  letter-spacing: -1.107px;
+
+  border-radius: 4.614px;
+  background: var(--sub2, #0e6eff);
+  width: 50px;
+
+  align-items: center;
+  justify-content: center;
+  padding: 1px 2px;
 `;

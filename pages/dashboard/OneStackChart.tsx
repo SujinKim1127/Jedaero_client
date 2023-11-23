@@ -55,6 +55,7 @@ const Title = styled.p`
 
 const UpperBox = styled(FlexTemplate)`
   height: 10%;
+  margin-bottom: 10px;
 `;
 
 const ContentBox = styled(FlexTemplate)`

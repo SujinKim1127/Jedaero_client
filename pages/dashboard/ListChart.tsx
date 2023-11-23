@@ -24,24 +24,31 @@ const ListChart: React.FC<ListProps> = ({ title, contents }) => {
       </containerStyle.TitleBox>
       <containerStyle.ChartBox>
         <ContentsBox>
-          {contents &&
-            contents.map((element, index) => {
-              return (
-                <div
-                  className={css`
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-
-                    column-gap: 10px;
-                  `}
-                  key={index}
-                >
-                  <NumberBall>{index + 1}</NumberBall>
-                  <RankTitle>{element}</RankTitle>
-                </div>
-              );
-            })}
+          <div
+            className={css`
+              display: flex;
+              flex-flow: column nowrap;
+              row-gap: 10px;
+            `}
+          >
+            {contents &&
+              contents.map((element, index) => {
+                return (
+                  <div
+                    className={css`
+                      display: flex;
+                      align-items: center;
+                      justify-content: flex-start;
+                      column-gap: 10px;
+                    `}
+                    key={index}
+                  >
+                    <NumberBall>{index + 1}</NumberBall>
+                    <RankTitle>{element}</RankTitle>
+                  </div>
+                );
+              })}
+          </div>
         </ContentsBox>
       </containerStyle.ChartBox>
     </containerStyle.Container>

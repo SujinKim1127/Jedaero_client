@@ -1,7 +1,8 @@
-import { COLORS } from "@/styles/colors";
 import styled from "@emotion/styled";
 
 export const Container = styled.div`
+  padding-top: 1rem;
+
   width: 1050px;
   display: flex;
   flex-direction: column;
@@ -20,7 +21,6 @@ export const HeadTitleBox = styled.div`
   font-size: 26px;
   font-style: normal;
   font-weight: 500;
-  line-height: 16.53px; /* 63.577% */
   letter-spacing: -1.56px;
 `;
 

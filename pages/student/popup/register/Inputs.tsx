@@ -5,6 +5,7 @@ import { FilledInput, IconButton, InputAdornment } from "@mui/material";
 import SearchTwoToneIcon from "@mui/icons-material/SearchTwoTone";
 import { DateTimePicker } from "@mui/x-date-pickers";
 import { postPopups } from "@/pages/api/popup";
+import { useRouter } from "next/router";
 
 interface ParamProps {
   title: string;
@@ -25,7 +26,7 @@ const Inputs: React.FC = () => {
     ],
     []
   );
-
+  const router = useRouter();
   const [formData, setFormData] = useState<ParamProps>({
     title: "",
     content: "",
@@ -42,6 +43,7 @@ const Inputs: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     postData();
+    router.back();
   };
 
   const postData = async () => {

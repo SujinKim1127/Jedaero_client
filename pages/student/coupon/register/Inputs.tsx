@@ -1,5 +1,4 @@
 
-
 import React, { useEffect, useMemo, useState } from "react";
 import * as styles from "../../../../components/styles/CInputs.style";
 import { css } from "@emotion/css";
@@ -13,7 +12,6 @@ import {
   List,
   ListItem,
   ListItemText,
-
 
 } from "@mui/material";
 import SearchTwoToneIcon from "@mui/icons-material/SearchTwoTone";
@@ -36,7 +34,8 @@ interface EventProps {
   quantity: number;
 }
 
-const Inputs: React.FC = () => {
+const Inputs = (props: any) => {
+  const setCouponContent = props.setCouponContent;
   const placeHolders = useMemo(
     () => [
       'ex- “제대로 사용자 한정, 한 번 더 카페 1900원 할인쿠폰"',
@@ -47,7 +46,6 @@ const Inputs: React.FC = () => {
     ],
     []
   );
-
 
 
   const [stores, setStores] = useState([]);
@@ -63,7 +61,6 @@ const Inputs: React.FC = () => {
 
   console.log(stores);
 
-
   const [formData, setFormData] = useState<EventProps>({
     storeId: 2,
     type: "COUPON",
@@ -76,6 +73,7 @@ const Inputs: React.FC = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    setCouponContent({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -135,11 +133,9 @@ const Inputs: React.FC = () => {
                 width: 50%;
               `}
 
-
               onChange={(e) => {
                 setSearchTerm(e.target.value);
               }}
-
 
               placeholder={placeHolders[1]}
               endAdornment={
@@ -170,7 +166,6 @@ const Inputs: React.FC = () => {
               placeholder={placeHolders[3]}
               name="condition"
               onChange={(e) => {
-
 
                 let result: any = [];
 
@@ -225,7 +220,6 @@ const Inputs: React.FC = () => {
           </styles.SubmitButton>
         </styles.InputBox>
       </form>
-
     </styles.Container>
   );
 };

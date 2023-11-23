@@ -33,7 +33,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.p`
-  font-size: 1rem;
+  font-size: 15px;
   color: var(--g3, #636366);
   font-weight: 500;
 `;
