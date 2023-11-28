@@ -22,7 +22,6 @@ const AuthPage: React.FC<AuthProps> = () => {
   // input file changes
   const handleFileInput = (e: any) => {
     const file = e.target.files[0];
-    console.log(file);
     setProofImage(file);
   };
 
@@ -54,8 +53,6 @@ const AuthPage: React.FC<AuthProps> = () => {
         typeName: "총총",
         proofImageUrl: "",
       });
-
-      console.log(signUpResult);
     } catch (error) {
       console.error("회원가입 오류 : ", error);
     }

@@ -46,7 +46,6 @@ const SearchModal = ({ setIsSearchOpen }: SMProps) => {
     baseData.then((res) => {
       if (res !== null) {
         setData(res.stores);
-        console.log("res", res.stores);
       }
     });
   }, []);
@@ -70,7 +69,6 @@ const SearchModal = ({ setIsSearchOpen }: SMProps) => {
     filterData.then((res) => {
       if (res !== null) {
         setData(res.stores || []);
-        console.log("operateF", res.stores);
       }
     });
   }, [operateFilter]);

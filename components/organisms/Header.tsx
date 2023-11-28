@@ -32,15 +32,8 @@ const Header = () => {
     setUserSessionData(window.sessionStorage?.getItem("userSession"));
   }, []);
 
-  useEffect(() => {
-    console.table(`USER SESSION DATA : ${userSessionData}`);
-  }, [userSessionData]);
-
   const logoutHandler = async () => {
-    console.log("logout합니다");
     const result = await Logout();
-    console.log(result);
-
     setLogData({
       logined: false,
       email: "",

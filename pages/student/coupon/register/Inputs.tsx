@@ -1,10 +1,8 @@
-
 import React, { useEffect, useMemo, useState } from "react";
 import * as styles from "../../../../components/styles/CInputs.style";
 import { css } from "@emotion/css";
 import {
   Checkbox,
-
   Dialog,
   FilledInput,
   IconButton,
@@ -12,18 +10,15 @@ import {
   List,
   ListItem,
   ListItemText,
-
 } from "@mui/material";
 import SearchTwoToneIcon from "@mui/icons-material/SearchTwoTone";
 import { createCoupon } from "@/pages/api/coupon";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CircleIcon from "@mui/icons-material/Circle";
 
-
 import { getFoods } from "@/pages/api/others";
 import { useCouponData } from "@/components/hooks/useCouponData";
 import { useStores } from "@/components/hooks/useStores";
-
 
 interface EventProps {
   storeId: number;
@@ -46,20 +41,13 @@ const Inputs = (props: any) => {
     ],
     []
   );
-
-
+  
   const [stores, setStores] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSelectedStore = (store: any) => {
     setFormData({ ...formData, storeId: store.storeId });
   };
-
-  useEffect(() => {
-    console.log(formData);
-  }, []);
-
-  console.log(stores);
 
   const [formData, setFormData] = useState<EventProps>({
     storeId: 2,
@@ -81,10 +69,6 @@ const Inputs = (props: any) => {
     postData();
   };
 
-  useEffect(() => {
-    console.log(formData);
-  }, [formData]);
-
   const postData = async () => {
     const result = await createCoupon({
       name: formData.name,
@@ -94,8 +78,6 @@ const Inputs = (props: any) => {
       type: "COUPON",
       conditions: formData.conditions,
     });
-
-    console.log(result);
   };
 
   return (
@@ -132,11 +114,9 @@ const Inputs = (props: any) => {
               className={css`
                 width: 50%;
               `}
-
               onChange={(e) => {
                 setSearchTerm(e.target.value);
               }}
-
               placeholder={placeHolders[1]}
               endAdornment={
                 <InputAdornment position="end">
@@ -166,12 +146,8 @@ const Inputs = (props: any) => {
               placeholder={placeHolders[3]}
               name="condition"
               onChange={(e) => {
-
                 let result: any = [];
-
-
                 result.push(e.target.value);
-
                 setFormData((prev) => ({ ...prev, conditions: result }));
               }}
             />
