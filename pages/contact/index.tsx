@@ -47,7 +47,6 @@ export default function Contact() {
     });
     baseData.then((res) => {
       setData(res?.contractedStores);
-      console.log(res?.contractedStores);
     });
   }, []);
 
@@ -70,7 +69,6 @@ export default function Contact() {
     filterData.then((res) => {
       if (res !== null) {
         setData(res.contractedStores);
-        console.log("operateF", res.contractedStores);
       }
     });
   }, [operateFilter]);

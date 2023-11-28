@@ -43,8 +43,6 @@ const ContactStore = () => {
 
   const router = useRouter();
   const { id } = router.query;
-  console.log("id", id);
-
   const [isStampModal, setIsStampModal] = useState<boolean>(false);
   const [isFinishModal, setIsFinishModal] = useState<boolean>(false);
   const handleOnClickStamp = () => {
@@ -64,7 +62,6 @@ const ContactStore = () => {
     const info = getContractInfo(Number(id));
     info.then((res) => {
       setData(res);
-      console.log("info", res);
     });
   }, [id]);
   const eng = ["FOOD", "CAFE", "CULTURE", "BEAUTY", "ETC"];

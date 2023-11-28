@@ -1,8 +1,6 @@
 import { getPopups } from "@/pages/api/popup";
 import { useEffect, useState } from "react";
 
-
-
 interface Popup {
   title: string;
   content: string;
@@ -12,17 +10,13 @@ interface Popup {
 }
 
 export const usePopupData = () => {
-
   const [popups, setPopups] = useState<Popup[]>([]);
 
   // api 호출해서 초기화
   useEffect(() => {
     const fetchData = async () => {
       const data = await getPopups(0);
-      console.log(data);
-
       data && setPopups(data.content);
-
     };
 
     fetchData();
@@ -30,4 +24,3 @@ export const usePopupData = () => {
 
   return { popups };
 };
-

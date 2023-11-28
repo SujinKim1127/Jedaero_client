@@ -49,7 +49,6 @@ export default function SearchHome() {
     baseData.then((res) => {
       if (res !== null) {
         setData(res.stores);
-        console.log("res", res.stores);
       }
     });
   }, []);
@@ -73,7 +72,6 @@ export default function SearchHome() {
     filterData.then((res) => {
       if (res !== null) {
         setData(res.stores || []);
-        console.log("operateF", res.stores);
       }
     });
   }, [operateFilter]);

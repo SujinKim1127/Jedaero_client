@@ -29,7 +29,6 @@ export const useStores = async ({
       });
 
       setData(result.coupons);
-      console.log(result.coupons);
     };
 
     fetchData();

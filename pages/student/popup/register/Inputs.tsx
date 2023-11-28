@@ -54,12 +54,7 @@ const Inputs: React.FC = () => {
       endDate: formData.endDate,
       storeId: formData.storeId,
     });
-    console.log(result);
   };
-
-  useEffect(() => {
-    console.log(JSON.stringify(formData));
-  }, [formData]);
 
   return (
     <styles.Container>
@@ -173,7 +168,6 @@ const Inputs: React.FC = () => {
                 label="선택해주세요"
                 onChange={(newValue: any) => {
                   let date = `${newValue.$y}-${newValue.$M}-${newValue.$D} ${newValue.$H}:${newValue.$m}`;
-                  console.log(date);
                   setFormData((prev) => ({
                     ...prev,
                     reservation: date,
